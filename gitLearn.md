@@ -34,17 +34,24 @@ git log
     --stat 显示每次提交的统计信息，显示结果差异
     --name-only只输出改变文件的名字
 
->将git进行一次撤销操作
-首先进行一次 git reset gitLearn.md,将文件从暂存区撤销
-然后使用 git checkout -- gitLearn.md，将文件回退成未修改的时候
+> 提交后如果发现有文件漏提交了，但又不希望新提交一次
+git commit -m "第一次提交，未将所有应提交的commit"
+git add next.py 将希望补上一起提交的add
+git commit --amend 这一次的提交会将上一次的进行覆盖合并一起上传
+
+
+>撤销暂存中文件的修改，保留为上一次或者指定位置的部分
+git reset HEAD **.py (HEAD可以替换为指定的一个id值，就恢复至指定的时间点 )
+git checkout -- **.py 将本地文件回退
 
 >查看远程的仓库
 git remote -v 将远程仓库一一列举出来
 git remote  add <name> <url>添加一个远程的Git仓库，指定一个简写名字给他
 
 
-> 提交后如果发现有文件漏提交了，但又不希望新提交一次
-git commit -m "第一次提交，未将所有应提交的commit"
-git add next.py 将希望补上一起提交的add
-git commit --amend 这一次的提交会将上一次的进行覆盖合并一起上传
+# git分支管理
+>新建一个branch分支
+git branch test
 
+>切换分支
+git checkout test
