@@ -24,10 +24,10 @@ git status
 > 从git将某个文件移除
 git rm **.py
 
->将git的某个文件移动或者重命名
+> 将git的某个文件移动或者重命名
 git mv a.py b.py
 
->查看每次进行提交时候执行的操作
+> 查看每次进行提交时候执行的操作
 git log 
 参数具体有 
     -p 按每次补丁的形式输出差异，显示过程差异
@@ -40,18 +40,20 @@ git add next.py 将希望补上一起提交的add
 git commit --amend 这一次的提交会将上一次的进行覆盖合并一起上传
 
 
->撤销暂存中文件的修改，保留为上一次或者指定位置的部分
+> 撤销暂存中文件的修改，保留为上一次或者指定位置的部分
 git reset HEAD **.py (HEAD可以替换为指定的一个id值，就恢复至指定的时间点 )
 git checkout -- **.py 将本地文件回退
 
->查看远程的仓库
+> 查看远程的仓库
 git remote -v 将远程仓库一一列举出来
 git remote  add <name> <url>添加一个远程的Git仓库，指定一个简写名字给他
 
 
 # git分支管理
->新建一个branch分支
+> 新建一个branch分支
 git branch test
 
->切换分支
+> 切换分支(分支切换之前，需要提交所有该分支的内容后才允许提交，不然的话部分文件会丢失更改)
 git checkout test
+
+> 分支合并
