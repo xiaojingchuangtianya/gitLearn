@@ -57,3 +57,11 @@ git branch test
 git checkout test
 
 > 分支合并
+在test分支将问题解决后，commit，然后checkout回到主分支master
+然后在此分支将test分支的修改合并过来
+git merge test
+
+>分支删除(在确认所有内容处理结束以及合并后，可以将部分分支删除)
+git branch -d test
+
+>将远程仓库的内容进行拉取到本地
